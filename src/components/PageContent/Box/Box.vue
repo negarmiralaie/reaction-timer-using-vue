@@ -1,0 +1,46 @@
+<template>
+    <section v-if="isShow" @click="stopTimer" class="Box">
+        <p>Click Here</p>
+    </section>    
+</template>
+
+<script>
+export default {
+    name: 'Box',
+    components:{},
+    props:['delay'],
+    data(){ 
+        return{
+            isShow: false,
+            timer:null,
+            reactionTime:0
+    }},
+    mounted(){
+        setTimeout(() =>{
+            this.isShow = true
+            this.startTimer()
+        },this.delay)
+    },
+    methods:{
+        hideBox(){
+            this.isShow = false
+        },
+        startTimer(){
+            this.timer=setInterval(()=>{
+                this.reactionTime++
+            },1)
+            console.log("started")
+        },
+        stopTimer(){
+            clearInterval(this.timer)
+            this.hideBox()
+            this.$emit('isEnded', this.reactionTime)
+        }
+    }
+}
+</script>
+
+<style>
+
+</style>
+
