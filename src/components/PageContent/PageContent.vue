@@ -1,10 +1,9 @@
 <template>
   <section v-if="!isStarted">
-    <h1>"Reaction Timer"</h1>
-    <h2>Instruction:</h2>
-    <p>A box will appear any moment, click on it ASAP, you will be faced with your result =)</p>
-    <button @click="start" :disabled="isStarted">Click To Start</button>
+    <PageDetails/>
+    <button @click="start">Click To Start</button>
   </section>
+  
   <Box v-if="isStarted" :delay="delay" @isEnded="end"/>
   <Results v-if="showResults" :reactionTime="reactionTime"/>
 </template>
@@ -13,17 +12,18 @@
 
 <script>
 // import Box from '../PageContent/Box/Box.vue'
+import PageDetails from '../PageContent/PageDetails/PageDetails.vue'
 import Box from '../PageContent/Box/Box.vue'
 import Results from '../PageContent/Results/Results.vue'
 
 export default {
   name: 'PageContent',
-  components: {Box, Results},
+  components: {PageDetails ,Box, Results},
 
   data(){
       return{
         isStarted:false,
-        delay: 2000 +Math.random()*4000,
+        delay: 2000 +Math.random()*3000,
         reactionTime: null,
         showResults: false
     }

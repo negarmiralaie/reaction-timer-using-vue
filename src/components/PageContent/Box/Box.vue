@@ -29,7 +29,6 @@ export default {
             this.timer=setInterval(()=>{
                 this.reactionTime++
             },1)
-            console.log("started")
         },
         stopTimer(){
             clearInterval(this.timer)

@@ -20,6 +20,21 @@ export default {
 
 .Box{
   background-color:red;
-  padding: 10vh 0;
+  color:white;
+  cursor: pointer;
+  position: fixed;
+  display:flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 30vh;
+  border-radius: 10px;
+}
+
+.Box p{
+  margin: auto;
 }
 </style>
