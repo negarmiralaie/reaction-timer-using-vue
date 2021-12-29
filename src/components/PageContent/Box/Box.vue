@@ -1,5 +1,5 @@
 <template>
-    <section v-if="isShow" @click="stopTimer" class="Box">
+    <section v-if="isBoxShown" @click="stopTimer" class="Box">
         <p>Click Here</p>
     </section>    
 </template>
@@ -11,19 +11,19 @@ export default {
     props:['delay'],
     data(){ 
         return{
-            isShow: false,
+            isBoxShown: false,
             timer:null,
             reactionTime:0
     }},
     mounted(){
         setTimeout(() =>{
-            this.isShow = true
+            this.isBoxShown = true
             this.startTimer()
         },this.delay)
     },
     methods:{
         hideBox(){
-            this.isShow = false
+            this.isBoxShown = false
         },
         startTimer(){
             this.timer=setInterval(()=>{

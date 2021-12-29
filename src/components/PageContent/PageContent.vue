@@ -1,17 +1,14 @@
 <template>
-  <section v-if="!isStarted">
+  <section v-if="!isGameStarted">
     <PageDetails/>
     <button @click="start">Click To Start</button>
   </section>
   
-  <Box v-if="isStarted" :delay="delay" @isEnded="end"/>
+  <Box v-if="isGameStarted" :delay="delay" @isEnded="end"/>
   <Results v-if="showResults" :reactionTime="reactionTime"/>
 </template>
 
-
-
 <script>
-// import Box from '../PageContent/Box/Box.vue'
 import PageDetails from '../PageContent/PageDetails/PageDetails.vue'
 import Box from '../PageContent/Box/Box.vue'
 import Results from '../PageContent/Results/Results.vue'
@@ -22,21 +19,26 @@ export default {
 
   data(){
       return{
-        isStarted:false,
+        isGameStarted:false,
         delay: 2000 +Math.random()*3000,
         reactionTime: null,
         showResults: false
     }
   },
   methods: {
+    changeisGameStarted(){
+      this.isGameStarted = !this.isGameStarted
+    },
       start(){
-          this.isStarted=true;
+          //isGameStarted will be true now
+          this.changeisGameStarted()
           this.showResults=false;
       },
       end(reactionTime){
         this.reactionTime= reactionTime
-        this.isStarted=false;
-        this.showResults=true;
+        //isGameStarted will be false now
+          this.changeisGameStarted()
+          this.showResults=true;
       }
   },
 }
