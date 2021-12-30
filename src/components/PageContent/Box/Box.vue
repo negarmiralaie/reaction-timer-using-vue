@@ -1,6 +1,6 @@
 <template>
     <LoadingPage v-if="!isBoxShown"/>
-    <section v-if="isBoxShown" @click="stopTimer" class="Box">
+    <section v-if="isBoxShown" @click="stopTimer" class="Box" v-bind:style="{ left: computedLeft }">
         <p>Click Here</p>
     </section>
 </template>
@@ -17,6 +17,7 @@ export default {
             isBoxShown: false,
             timer:null,
             reactionTime:0,
+            left:`${Math.floor(Math.random()*(100))}%`
     }},
     mounted(){
         setTimeout(() =>{
@@ -24,6 +25,11 @@ export default {
             this.startTimer()
         },this.delay)
     },
+    computed: {
+    computedLeft: function () {
+      return this.left;
+    }
+  },
     methods:{
         hideBox(){
             this.isBoxShown = false
