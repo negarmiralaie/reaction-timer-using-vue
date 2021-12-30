@@ -1,5 +1,7 @@
 <template>
 <PageContent/>
+<!-- <font-awesome-icon icon="phone" /> -->
+
 </template>
 
 <script>
