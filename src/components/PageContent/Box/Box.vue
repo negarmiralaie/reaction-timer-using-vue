@@ -1,6 +1,6 @@
 <template>
     <LoadingPage v-if="!isBoxShown"/>
-    <section v-if="isBoxShown" @click="stopTimer" class="Box" v-bind:style="{ left: computedLeft, top: computedTop, transform: computedTransform}">
+    <section v-else @click="stopTimer" class="Box" v-bind:style="{ left: computedLeft, top: computedTop, transform: computedTransform}">
         <p>Click Here</p>
     </section>
 </template>
