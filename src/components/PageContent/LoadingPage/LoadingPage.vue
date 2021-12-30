@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-@keyframes rotation {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -22,7 +22,7 @@ export default {
 }
 
 .spinner{
-    animation: rotation 2s infinite linear;
+    animation: spin 2s infinite linear;
 }
 
 </style>
