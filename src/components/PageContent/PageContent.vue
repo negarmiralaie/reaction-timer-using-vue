@@ -1,5 +1,5 @@
 <template>
-  <section v-if="!isGameStarted">
+  <section v-if="!isGameStarted&!isResultsShown">
     <PageDetails/>
     <button @click="start">Click To Start</button>
   </section>
