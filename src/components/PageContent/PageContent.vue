@@ -4,18 +4,19 @@
     <button @click="start">Click To Start</button>
   </section>
   <Box v-if="isGameStarted" :delay="delay" @isEnded="end"/>
-  
   <Results :reactionTime="reactionTime" @isResultsShown="showResults" v-if="isResultsShown"/>
+  <FYI/>
 </template>
 
 <script>
 import PageDetails from '../PageContent/PageDetails/PageDetails.vue'
 import Box from '../PageContent/Box/Box.vue'
 import Results from '../PageContent/Results/Results.vue'
+import FYI from '../PageContent/FYI/FYI.vue'
 
 export default {
   name: 'PageContent',
-  components: {PageDetails ,Box, Results},
+  components: {PageDetails ,Box, Results, FYI},
 
   data(){
       return{
