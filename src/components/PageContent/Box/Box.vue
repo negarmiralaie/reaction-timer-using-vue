@@ -1,6 +1,6 @@
 <template>
     <LoadingPage v-if="!isBoxShown"/>
-    <section v-if="isBoxShown" @click="stopTimer" class="Box" v-bind:style="{ left: computedLeft, top: computedTop}">
+    <section v-if="isBoxShown" @click="stopTimer" class="Box" v-bind:style="{ left: computedLeft, top: computedTop, transform: computedTransform}">
         <p>Click Here</p>
     </section>
 </template>
@@ -17,8 +17,9 @@ export default {
             isBoxShown: false,
             timer:null,
             reactionTime:0,
-            left:`${Math.floor(Math.random()*(95))}%`,
-            top:`${Math.floor(Math.random()*(95))}%`
+            left:`${Math.floor(Math.random()*(50))}%`,
+            top:`${Math.floor(Math.random()*(50))}%`,
+            transform: this.transform= 'translate(' + this.left + ',' + this.top + ')'
     }},
     mounted(){
         setTimeout(() =>{
@@ -27,11 +28,14 @@ export default {
         },this.delay)
     },
     computed: {
-    computedLeft: function () {
+    computedLeft(){
       return this.left;
     },
-    computedTop: function () {
+    computedTop() {
       return this.top;
+    },
+    computedTransform() {
+        return this.transform;
     }
   },
     methods:{
@@ -51,8 +55,4 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
 
