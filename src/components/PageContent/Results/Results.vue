@@ -1,7 +1,7 @@
 <template class="results">
     <h3>See what you've done:</h3>
-    <p>It took you {{reactionTime}}ms to click</p>
-    <small>This message will disappear in 5 seconds or you can click on below button to start again</small>
+    <h4>It took you {{reactionTime}}ms to click</h4>
+    <small>This message will disappear in 10 seconds or you can click on below button to start again</small>
     <button @click="endShowingResults">Click to start again</button>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     mounted(){
         setTimeout(() =>{
             this.endShowingResults()
-        },5000)
+        },10000)
     },
     methods:{
         endShowingResults(){
@@ -34,6 +34,6 @@ small{
 }
 
 button{
-    margin-top:.5rem;
+    margin-top:1rem;
 }
 </style>

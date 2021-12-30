@@ -3,8 +3,8 @@
     <PageDetails/>
     <button @click="start">Click To Start</button>
   </section>
-  
   <Box v-if="isGameStarted" :delay="delay" @isEnded="end"/>
+  
   <Results :reactionTime="reactionTime" @isResultsShown="showResults" v-if="isResultsShown"/>
 </template>
 

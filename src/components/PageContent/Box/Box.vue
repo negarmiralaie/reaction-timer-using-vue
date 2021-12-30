@@ -1,19 +1,22 @@
 <template>
+    <WaitingText v-if="!isBoxShown"/>
     <section v-if="isBoxShown" @click="stopTimer" class="Box">
         <p>Click Here</p>
-    </section>    
+    </section>
 </template>
 
 <script>
+    import WaitingText from '../WaitingText/WaitingText.vue'
+
 export default {
     name: 'Box',
-    components:{},
+    components:{WaitingText},
     props:['delay'],
     data(){ 
         return{
             isBoxShown: false,
             timer:null,
-            reactionTime:0
+            reactionTime:0,
     }},
     mounted(){
         setTimeout(() =>{
