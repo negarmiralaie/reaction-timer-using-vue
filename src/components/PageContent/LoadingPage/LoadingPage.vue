@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'WaitingText',
+    name: 'LoadingPage',
     components:{}
 }
 </script>

@@ -1,16 +1,17 @@
 <template>
-    <WaitingText v-if="!isBoxShown"/>
+    <LoadingPage v-if="!isBoxShown"/>
     <section v-if="isBoxShown" @click="stopTimer" class="Box">
         <p>Click Here</p>
     </section>
 </template>
 
 <script>
-    import WaitingText from '../WaitingText/WaitingText.vue'
+// import LoadingPage from '../LoadingPage/LoadingPage.vue'
+import LoadingPage from '../LoadingPage/LoadingPage.vue'
 
 export default {
     name: 'Box',
-    components:{WaitingText},
+    components:{LoadingPage},
     props:['delay'],
     data(){ 
         return{
