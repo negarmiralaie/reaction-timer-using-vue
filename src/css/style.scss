@@ -2,7 +2,7 @@
 
 @mixin centralize {
     position: fixed;
-    // left: 300px;
+    left: 0;
     right: 0;
     top: 0;
     bottom: 0;
@@ -22,10 +22,17 @@
     font-family: 'Poppins';
 }
 
-body {
-    padding: 10%;
+.Box {
+    @include centralize;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    width: 20%;
+    height: 30vh;
+    border-radius: 10px;
 
-    .Box{
-        @include centralize;
+    p {
+        margin: auto;
     }
 }

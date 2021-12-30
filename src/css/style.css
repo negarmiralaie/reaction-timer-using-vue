@@ -14,15 +14,25 @@
   font-family: 'Poppins';
 }
 
-body {
-  padding: 10%;
-}
-
-body .Box {
+.Box {
   position: fixed;
+  left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  margin: auto;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20%;
+  height: 30vh;
+  border-radius: 10px;
+}
+
+.Box p {
   margin: auto;
 }
 /*# sourceMappingURL=style.css.map */
