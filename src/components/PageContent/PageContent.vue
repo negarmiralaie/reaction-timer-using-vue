@@ -5,7 +5,7 @@
   </section>
   
   <Box v-if="isGameStarted" :delay="delay" @isEnded="end"/>
-  <Results v-if="showResults" :reactionTime="reactionTime"/>
+  <Results :reactionTime="reactionTime" @isResultsShown="showResults" v-if="isResultsShown"/>
 </template>
 
 <script>
@@ -22,24 +22,26 @@ export default {
         isGameStarted:false,
         delay: 2000 +Math.random()*3000,
         reactionTime: null,
-        showResults: false
+        isResultsShown: false
     }
   },
   methods: {
     changeisGameStarted(){
       this.isGameStarted = !this.isGameStarted
     },
-      start(){
-          //isGameStarted will be true now
-          this.changeisGameStarted()
-          this.showResults=false;
-      },
-      end(reactionTime){
-        this.reactionTime= reactionTime
-        //isGameStarted will be false now
-          this.changeisGameStarted()
-          this.showResults=true;
-      }
+    start(){
+        //isGameStarted will be true now
+        this.changeisGameStarted()
+    },
+    end(reactionTime){
+      this.reactionTime= reactionTime
+      //isGameStarted will be false now
+        this.changeisGameStarted()
+        this.isResultsShown=true
+    },
+    showResults(isResultsShown){
+      this.isResultsShown=isResultsShown
+    }
   },
 }
 </script>
