@@ -1,7 +1,8 @@
-<template>
+<template class="results">
     <h3>See what you've done:</h3>
     <p>It took you {{reactionTime}}ms to click</p>
-    <small>This message will disappear in 5 seconds</small>
+    <small>This message will disappear in 5 seconds or you can click on below button to start again</small>
+    <button @click="endShowingResults">Click to start again</button>
 </template>
 
 <script>
@@ -14,13 +15,25 @@ export default {
     },
     mounted(){
         setTimeout(() =>{
+            this.endShowingResults()
+        },5000)
+    },
+    methods:{
+        endShowingResults(){
             this.isResultsShown=false
             this.$emit('isResultsShown', this.isResultsShown)
-        },5000)
+        }
     }
 }
 </script>
 
-<style>
+<style scoped>
 
+small{
+    display:block;
+}
+
+button{
+    margin-top:.5rem;
+}
 </style>
