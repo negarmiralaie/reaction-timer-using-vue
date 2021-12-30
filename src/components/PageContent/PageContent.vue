@@ -2,10 +2,10 @@
   <section v-if="!isGameStarted&!isResultsShown">
     <PageDetails/>
     <button @click="start">Click To Start</button>
+    <FYI/>
   </section>
   <Box v-if="isGameStarted" :delay="delay" @isEnded="end"/>
   <Results :reactionTime="reactionTime" @isResultsShown="showResults" v-if="isResultsShown"/>
-  <FYI/>
 </template>
 
 <script>
