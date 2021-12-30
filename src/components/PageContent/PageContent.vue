@@ -26,17 +26,17 @@ export default {
     }
   },
   methods: {
-    changeisGameStarted(){
+    changeIsGameStarted(){
       this.isGameStarted = !this.isGameStarted
     },
     start(){
         //isGameStarted will be true now
-        this.changeisGameStarted()
+        this.changeIsGameStarted()
     },
     end(reactionTime){
       this.reactionTime= reactionTime
       //isGameStarted will be false now
-        this.changeisGameStarted()
+        this.changeIsGameStarted()
         this.isResultsShown=true
     },
     showResults(isResultsShown){
