@@ -1,6 +1,6 @@
 <template>
     <p>Wait for the box to show up...</p>
-    <font-awesome-icon icon="spinner" />
+    <font-awesome-icon icon="spinner" class="spinner"/>
 
 </template>
 
@@ -12,5 +12,17 @@ export default {
 </script>
 
 <style scoped>
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.spinner{
+    animation: rotation 2s infinite linear;
+}
 
 </style>

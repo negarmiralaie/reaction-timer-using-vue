@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// import LoadingPage from '../LoadingPage/LoadingPage.vue'
 import LoadingPage from '../LoadingPage/LoadingPage.vue'
 
 export default {
