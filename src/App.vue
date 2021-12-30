@@ -24,13 +24,13 @@ export default {
   background-color:red;
   color:white;
   cursor: pointer;
-  position: fixed;
+  /* position: fixed; */
   display:flex;
-  left: 0;
+  /* left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto; */
   width: 50%;
   height: 30vh;
   border-radius: 10px;

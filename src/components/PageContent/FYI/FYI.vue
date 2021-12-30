@@ -1,5 +1,5 @@
 <template>
-    <div class="accordion" id="accordionExample">
+    <div class="accordion FYI" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -25,7 +25,9 @@ export default {
 <style scoped>
 
 .accordion{
+    width: 70%;
     margin: 2rem 0;
+    margin: 2rem auto;
 }
 
 a{
