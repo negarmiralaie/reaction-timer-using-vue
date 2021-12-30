@@ -21,18 +21,3 @@ export default {
     components:{}
 }
 </script>
-
-<style scoped>
-
-.accordion{
-    width: 70%;
-    margin: 2rem 0;
-    margin: 2rem auto;
-}
-
-a{
-    font-weight: bold;
-    color: inherit;
-}
-
-</style>

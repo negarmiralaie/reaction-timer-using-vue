@@ -46,20 +46,3 @@ export default {
   },
 }
 </script>
-
-<style>
-
-h1{
-    color: black;
-}
-
-button{
-    background-color:green;
-    color: white;
-    box-shadow: 0 0 25px 0 rgba(0,0,0,.25);
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    border-radius:10px;
-}
-</style>

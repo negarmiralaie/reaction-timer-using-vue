@@ -9,6 +9,11 @@
     margin: auto;
 }
 
+@mixin borderAndShadow {
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, .15);
+    border-radius: 15px !important;
+}
+
 *,
 *:before,
 *:after {
@@ -24,15 +29,35 @@
 
 .Box {
     @include centralize;
+    @include borderAndShadow;
     background-color: red;
     color: white;
     cursor: pointer;
     display: flex;
     width: 20%;
     height: 20%;
-    border-radius: 10px;
 
     p {
         margin: auto;
+    }
+}
+
+button {
+    @include borderAndShadow;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.accordion {
+    @include borderAndShadow;
+    width: 70%;
+    margin: 2rem auto;
+
+    a {
+        font-weight: bold;
+        color: inherit;
     }
 }
