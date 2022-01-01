@@ -17,9 +17,8 @@ export default {
             isBoxShown: false,
             timer:null,
             reactionTime:0,
-            left:`${Math.floor(Math.random()*(50))}%`,
-            top:`${Math.floor(Math.random()*(50))}%`,
-            transform: this.transform= 'translate(' + this.left + ',' + this.top + ')'
+            left:`${Math.floor(Math.random()*(100))}%`,
+            top:`${Math.floor(Math.random()*(100))}%`
     }},
     mounted(){
         setTimeout(() =>{
@@ -35,7 +34,7 @@ export default {
       return this.top;
     },
     computedTransform() {
-        return this.transform;
+        return 'translate(' + this.left + ',' + this.top + ')';
     }
   },
     methods:{
@@ -54,5 +53,6 @@ export default {
         }
     }
 }
+
 </script>
 
